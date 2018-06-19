@@ -2,6 +2,7 @@ package com.lwp.springboot;
 
 import com.lwp.springboot.dao.TestDao;
 import com.lwp.springboot.dto.User;
+import com.lwp.springboot.service.TestService;
 import net.minidev.json.JSONObject;
 import org.junit.Assert;
 import org.junit.Before;
@@ -18,6 +19,10 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -27,6 +32,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class SpringbootApplicationTests {
     @Autowired
     TestDao testDao;
+
+    @Autowired
+    TestService testService;
 
     private MockMvc mockMvc; //模拟MVC对象，通过MockMvcBuilders.webAppContextSetup(this.wac).build()初始化。
 
@@ -48,6 +56,29 @@ public class SpringbootApplicationTests {
         user.setName("lwp");
         user.setPassword("12385");
         int insert = testDao.insert(user);
+        System.out.println(insert);
+    }
+
+    @Test
+    public void test1() {
+        User user = new User();
+        user.setName("lwp");
+        user.setPassword("12385");
+        int insert = testService.test(user);
+        System.out.println(insert);
+    }
+
+    @Test
+    public void test2() {
+        List<User> list=new ArrayList<User>();
+        for(int i=0;i<4;i++){
+            User user = new User();
+            user.setId(i);
+            user.setName("lwp");
+            user.setPassword("12385");
+            list.add(user);
+        }
+        int insert = testService.test1(list);
         System.out.println(insert);
     }
 
