@@ -35,7 +35,7 @@ public class InterceptorConfig  implements HandlerInterceptor {
         else{    
             PrintWriter printWriter = httpServletResponse.getWriter();
             printWriter.write("{code:0,message:\"session is invalid,please login again!\"}");    
-            return false;    
+            return true;
         }    
     
     }    
