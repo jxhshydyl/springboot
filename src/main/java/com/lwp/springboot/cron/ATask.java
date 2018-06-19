@@ -1,4 +1,4 @@
-package com.lwp.springboot.service;
+package com.lwp.springboot.cron;
 
 import org.joda.time.DateTime;
 import org.springframework.scheduling.annotation.Scheduled;
