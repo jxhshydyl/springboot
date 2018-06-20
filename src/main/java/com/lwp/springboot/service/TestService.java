@@ -1,11 +1,9 @@
 package com.lwp.springboot.service;
 
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.lwp.springboot.dao.TestDao;
 import com.lwp.springboot.dto.User;
 import com.lwp.springboot.util.SerializeUtil;
-import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.support.atomic.RedisAtomicLong;

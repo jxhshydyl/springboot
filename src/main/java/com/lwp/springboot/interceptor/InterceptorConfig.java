@@ -47,6 +47,6 @@ public class InterceptorConfig  implements HandlerInterceptor {
     
     @Override    
     public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {    
-        log.info("---------------视图渲染之后的操作-------------------------0");    
+        log.info("---------------视图渲染之后的操作-------------------------");
     }    
 }
